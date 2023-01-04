@@ -1,13 +1,15 @@
 import GetOrder.*;
+import Pizza.FinishedOrder;
 import ProcessOrder.*;
+import SaveOrder.SaveOrder;
 
 
 public class PizziSalle {
     public static void main(String[] args) {
         Order order = GetOrderTest.getOrder();
-        ProcessOrder.processOrder(order);
-
-        //TODO fill i information for order
+        FinishedOrder finishedOrder = ProcessOrder.processOrder(order);
+        SaveOrder.saveOrder(finishedOrder);
+        //TODO fill in information for order
         System.out.print("Here is your order: " + order.name );
     }
 }

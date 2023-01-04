@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class GetOrder {
     public static Order getOrder(){
-        System.out.println("PizziSalle pizzaria! Order your pizza here:");
+        System.out.println("PizziSalle pizzaria! GetOrder.Order your pizza here:");
         System.out.println("-------------------------------------------");
         Order order = new Order();
         Scanner input = new Scanner(System.in);

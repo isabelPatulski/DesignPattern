@@ -6,9 +6,8 @@ package Pizza;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-public abstract class Pizza {
+public abstract class Pizza extends Product {
     protected String name;
     protected double crustPrice;
 
