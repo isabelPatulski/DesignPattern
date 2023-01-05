@@ -55,6 +55,7 @@ public class Ingredient {
     }
 
     public static boolean isIngredientValid (String ingredient){
+
         return getValidIngredients().contains(ingredient);
     }
 
