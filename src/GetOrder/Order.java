@@ -21,8 +21,3 @@ public class Order {
 
 }
 
-class PizzaItem {
-    String name;
-    String crust;
-    List<String> toppings;
-}

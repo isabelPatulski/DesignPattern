@@ -1,6 +1,10 @@
 package Pizza;
 
 public class Product {
-    Double price;
-    String type;
+    public Double price;
+    public String type;
+    public String name;
+
 }
+
+

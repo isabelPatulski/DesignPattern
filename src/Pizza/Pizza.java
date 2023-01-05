@@ -7,11 +7,11 @@ package Pizza;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Pizza extends Product {
-    protected String name;
-    protected double crustPrice;
+public class Pizza extends Product {
+    public double crustPrice;
+    public String crustName;
 
-    public abstract double getCrustPrice();
+
 
     static List<String> getValidCrusts(){
         List<String> crusts = new ArrayList<>();
@@ -32,23 +32,26 @@ public abstract class Pizza extends Product {
 }
 
 class DefaultCrustPizza extends Pizza{
-    @Override
-    public double getCrustPrice() {
-        return 0;
+    public DefaultCrustPizza() {
+        crustPrice = 0;
+        crustName = "Original";
+        type  = "Pizza";
     }
 }
 
 class ThinCrustPizza extends Pizza {
-    @Override
-    public double getCrustPrice() {
-        return 0.5;
+    public ThinCrustPizza() {
+        crustPrice = 0.5;
+        crustName = "Thin";
+        type = "Pizza";
     }
 }
 
 class SicilianCrustPizza extends Pizza {
-    @Override
-    public double getCrustPrice() {
-        return 1;
+    public SicilianCrustPizza() {
+        crustPrice = 1;
+        crustName = "Sicilian";
+        type  = "Pizza";
     }
 }
 

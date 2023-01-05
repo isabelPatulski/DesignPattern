@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class StandardPizza extends Pizza{
-    public abstract String name();
-    public abstract double price();
-    public abstract Ingredient ingredient();
 
     static List<String> getValidPizzas(){
         List<String> pizzas = new ArrayList<>();
@@ -35,28 +32,52 @@ public abstract class StandardPizza extends Pizza{
 
     public static boolean isPizzaNameValid (String name){
         return StandardPizza.getValidPizzas().contains(name);
+
     }
 
 }
 
-    class Isabel extends StandardPizza {
-    public double getCrustPrice() {
-        return this.getCrustPrice();
-    }
+class StandardPizzaBasic extends StandardPizza {
 
-    @Override
-    public String name() {
-        return "Isabel";
-    }
-
-    @Override
-    public double price() {
-        return 10;
-    }
-
-    @Override
-    public Ingredient ingredient() {
-        IngredientFactory ingredientFactory = new IngredientFactory();
-         return ingredientFactory.getIngredient("ham");
+    public StandardPizzaBasic() {
+        price = 3.0;
+        name = "Basic";
     }
 }
+
+class Ingredient2Pizza extends StandardPizza {
+    public Ingredient2Pizza() {
+        price = 3.5;
+        name = "2 Ingredients";
+    }
+}
+
+class Ingredient3Pizza extends StandardPizza {
+    public Ingredient3Pizza() {
+        price = 4.0;
+        name = "3 Ingredients";
+    }
+}
+
+class Ingredient4Pizza extends StandardPizza {
+    public Ingredient4Pizza() {
+        price = 4.5;
+        name = "4 Ingredients";
+    }
+}
+
+class Ingredient5Pizza extends StandardPizza {
+    public Ingredient5Pizza() {
+        price = 5.0;
+        name = "5 Ingredients";
+    }
+}
+
+class Ingredient6Pizza extends StandardPizza {
+    public Ingredient6Pizza() {
+        price = 6.0;
+        name = "6 Ingredients";
+    }
+}
+
+

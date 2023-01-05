@@ -8,7 +8,7 @@ public class TestCrust {
         String input = "Original";
         Pizza pizza = crustPizza.getPizza(input);
 
-        System.out.println("Price=" + pizza.getCrustPrice());
+        System.out.println("Price=" + pizza.crustPrice);
     }
 
 
