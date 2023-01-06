@@ -1,5 +1,9 @@
 package GetOrder;
 
+import Product.Drink;
+import Product.Product;
+import Product.ProductFactory;
+
 import java.util.ArrayList;
 
 public class GetOrderTest {
@@ -14,7 +18,7 @@ public class GetOrderTest {
         order.pizzas = new ArrayList<PizzaItem>();
         PizzaItem pizzaItem1 = new PizzaItem();
         pizzaItem1.name = "texas";
-        pizzaItem1.crust = "";
+        pizzaItem1.crust = "original";
         order.pizzas.add(pizzaItem1);
 
         PizzaItem pizzaItem2 = new PizzaItem();
@@ -25,7 +29,7 @@ public class GetOrderTest {
 
         PizzaItem pizzaItem3 = new PizzaItem();
         pizzaItem3.name = "margherita";
-        pizzaItem3.crust = "thin";
+        pizzaItem3.crust = "sicilian";
         pizzaItem3.toppings = new ArrayList<String>();
         pizzaItem3.toppings.add("tomatoslices");
         pizzaItem3.toppings.add("mushrooms");

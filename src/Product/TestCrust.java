@@ -4,9 +4,9 @@ package Product;
 public class TestCrust {
 
     public static void main(String[] args){
-        CrustPizzaFactory crustPizza = new CrustPizzaFactory();
+        CrustFactory crustPizza = new CrustFactory();
         String input = "Original";
-        Crust crust = crustPizza.getPizza(input);
+        Crust crust = crustPizza.getCrust(input);
 
         System.out.println("Price=" + crust.crustPrice);
     }

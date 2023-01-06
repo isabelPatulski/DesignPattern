@@ -2,7 +2,7 @@ package Product;
 
 import java.util.ArrayList;
 import java.util.List;
-//TODO ryk ind i pizza
+
 public class Ingredient {
     protected String name;
     protected double price;

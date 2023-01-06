@@ -1,6 +1,8 @@
 package GetOrder;
 
 
+import Product.Drink;
+
 import java.util.List;
 
 
@@ -15,7 +17,7 @@ public class Order {
 
     //TODO create addOns for each pizza (ingredients)
     public List<PizzaItem> pizzas;
-    public List<String> beverages;
+    public List<Drink> drinks;
 
 
 

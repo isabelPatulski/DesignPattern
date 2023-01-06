@@ -7,9 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Crust extends Product {
-    public double crustPrice;
-    public String crustName;
-
+    double crustPrice;
+    String crustName;
 
 
     static List<String> getValidCrusts(){
@@ -27,6 +26,16 @@ public class Crust extends Product {
 
     public static String defaultCrust () {
         return "Original";
+    }
+
+    @Override
+    public Double getPrice() {
+        return null;
+    }
+
+    @Override
+    public String getName() {
+        return null;
     }
 }
 
@@ -48,7 +57,7 @@ class ThinCrustPizza extends Crust {
 
 class SicilianCrustPizza extends Crust {
     public SicilianCrustPizza() {
-        crustPrice = 1;
+        crustPrice = 0.75;
         crustName = "Sicilian";
         type  = "Product";
     }

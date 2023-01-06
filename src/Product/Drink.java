@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Drink extends Product{
-    public String drinkName;
-    public double drinkPrice;
+
 
     static List<String> getValidDrinks(){
         List<String> drinks = new ArrayList<>();
@@ -21,28 +20,44 @@ public class Drink extends Product{
         return Drink.getValidDrinks().contains(drink);
     }
 
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public Double getPrice() {
+        return this.price;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
 }
 
 class Water extends Drink{
     public Water() {
-        drinkName = "Water";
-        drinkPrice = 1;
-        //Skal den have product som cruts? eller burde crust have at den var product overhovedet
+        this.name = "Water";
+        this.price = 1.0;
     }
 }
 
 class Soda extends Drink{
     public Soda() {
-        drinkName = "Soda" ;
-        drinkPrice = 2;
+        this.name = "Soda" ;
+        this.price = 2.0;
 
     }
 }
 
 class Beer extends Drink{
     public Beer() {
-        drinkName = "Beer";
-        drinkPrice = 3;
+        this.name = "Beer";
+        this.price = 3.0;
 
     }
 }

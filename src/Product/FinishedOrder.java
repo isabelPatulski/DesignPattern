@@ -3,6 +3,7 @@ package Product;
 import Customer.*;
 import GetOrder.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -35,14 +36,26 @@ public class FinishedOrder {
         }
 
         //Initialize pizzas
-        for (PizzaItem pizzaItem: order.pizzas) {
-            CrustPizzaFactory crustPizza = new CrustPizzaFactory();
-            Crust crust = crustPizza.getPizza(pizzaItem.crust);
+        products = new ArrayList<Product>();
 
-
+        if (order.pizzas != null) {
+            for (PizzaItem pizzaItem : order.pizzas) {
+                ProductFactory productFactory = new ProductFactory();
+                Product pizza = productFactory.getProduct(pizzaItem.name, pizzaItem.crust);
+                pizza.name = pizzaItem.name;
+                products.add(pizza);
+            }
         }
-
+        if (order.drinks != null) {
+            for (Drink drinkItem : order.drinks) {
+                ProductFactory productFactory = new ProductFactory();
+                Product drink = productFactory.getProduct(drinkItem.name, null);
+                drink.name = drinkItem.name;
+                products.add(drink);
+            }
         }
 
     }
+
+}
 
