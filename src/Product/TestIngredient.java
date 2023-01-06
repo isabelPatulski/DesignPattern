@@ -1,4 +1,4 @@
-package Ingredient;
+package Product;
 
 public class TestIngredient {
     public static void main(String[] args) {

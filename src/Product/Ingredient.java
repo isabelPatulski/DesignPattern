@@ -1,6 +1,4 @@
-package Ingredient;
-
-import Pizza.Pizza;
+package Product;
 
 import java.util.ArrayList;
 import java.util.List;

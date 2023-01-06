@@ -1,13 +1,12 @@
-package Pizza;
+package Product;
 
 //To create the base for the Pizza i have used the Factory Design Pattern.
-//TODO rename to crust
 //TODO explain DesignPattern
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pizza extends Product {
+public class Crust extends Product {
     public double crustPrice;
     public String crustName;
 
@@ -23,7 +22,7 @@ public class Pizza extends Product {
     }
 
     public static boolean isCrustValid (String crust){
-        return Pizza.getValidCrusts().contains(crust);
+        return Crust.getValidCrusts().contains(crust);
     }
 
     public static String defaultCrust () {
@@ -31,27 +30,27 @@ public class Pizza extends Product {
     }
 }
 
-class DefaultCrustPizza extends Pizza{
+class DefaultCrustPizza extends Crust{
     public DefaultCrustPizza() {
         crustPrice = 0;
         crustName = "Original";
-        type  = "Pizza";
+        type  = "Product";
     }
 }
 
-class ThinCrustPizza extends Pizza {
+class ThinCrustPizza extends Crust {
     public ThinCrustPizza() {
         crustPrice = 0.5;
         crustName = "Thin";
-        type = "Pizza";
+        type = "Product";
     }
 }
 
-class SicilianCrustPizza extends Pizza {
+class SicilianCrustPizza extends Crust {
     public SicilianCrustPizza() {
         crustPrice = 1;
         crustName = "Sicilian";
-        type  = "Pizza";
+        type  = "Product";
     }
 }
 

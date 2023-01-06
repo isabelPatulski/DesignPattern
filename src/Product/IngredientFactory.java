@@ -1,4 +1,4 @@
-package Ingredient;
+package Product;
 
 public class IngredientFactory {
     public Ingredient getIngredient(String ingredientType) {

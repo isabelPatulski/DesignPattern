@@ -1,8 +1,7 @@
 package ProcessOrder;
 
-import Customer.*;
 import GetOrder.Order;
-import Pizza.FinishedOrder;
+import Product.FinishedOrder;
 
 public class ProcessOrder {
     public static FinishedOrder processOrder (Order order){

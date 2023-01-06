@@ -1,10 +1,12 @@
-package Pizza;
-import Ingredient.*;
+package Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class StandardPizza extends Pizza{
+public class Pizza extends Product{
+
+    protected Crust crust;
+    //TODO lav constructer der opretter en crust til pizza (crustName) og sæt type = pizza
 
     static List<String> getValidPizzas(){
         List<String> pizzas = new ArrayList<>();
@@ -31,13 +33,13 @@ public abstract class StandardPizza extends Pizza{
     }
 
     public static boolean isPizzaNameValid (String name){
-        return StandardPizza.getValidPizzas().contains(name);
+        return Pizza.getValidPizzas().contains(name);
 
     }
 
 }
 
-class StandardPizzaBasic extends StandardPizza {
+class StandardPizzaBasic extends Pizza {
 
     public StandardPizzaBasic() {
         price = 3.0;
@@ -45,35 +47,35 @@ class StandardPizzaBasic extends StandardPizza {
     }
 }
 
-class Ingredient2Pizza extends StandardPizza {
+class Ingredient2Pizza extends Pizza {
     public Ingredient2Pizza() {
         price = 3.5;
         name = "2 Ingredients";
     }
 }
 
-class Ingredient3Pizza extends StandardPizza {
+class Ingredient3Pizza extends Pizza {
     public Ingredient3Pizza() {
         price = 4.0;
         name = "3 Ingredients";
     }
 }
 
-class Ingredient4Pizza extends StandardPizza {
+class Ingredient4Pizza extends Pizza {
     public Ingredient4Pizza() {
         price = 4.5;
         name = "4 Ingredients";
     }
 }
 
-class Ingredient5Pizza extends StandardPizza {
+class Ingredient5Pizza extends Pizza {
     public Ingredient5Pizza() {
         price = 5.0;
         name = "5 Ingredients";
     }
 }
 
-class Ingredient6Pizza extends StandardPizza {
+class Ingredient6Pizza extends Pizza {
     public Ingredient6Pizza() {
         price = 6.0;
         name = "6 Ingredients";

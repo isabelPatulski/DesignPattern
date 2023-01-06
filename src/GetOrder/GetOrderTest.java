@@ -1,7 +1,5 @@
 package GetOrder;
 
-import Pizza.*;
-
 import java.util.ArrayList;
 
 public class GetOrderTest {

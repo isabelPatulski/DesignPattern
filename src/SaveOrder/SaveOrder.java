@@ -1,6 +1,6 @@
 package SaveOrder;
 
-import Pizza.FinishedOrder;
+import Product.FinishedOrder;
 
 public class SaveOrder {
     public static void saveOrder (FinishedOrder finishedOrder) {

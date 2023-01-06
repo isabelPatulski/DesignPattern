@@ -1,4 +1,4 @@
-package Pizza;
+package Product;
 
 
 public class TestCrust {
@@ -6,9 +6,9 @@ public class TestCrust {
     public static void main(String[] args){
         CrustPizzaFactory crustPizza = new CrustPizzaFactory();
         String input = "Original";
-        Pizza pizza = crustPizza.getPizza(input);
+        Crust crust = crustPizza.getPizza(input);
 
-        System.out.println("Price=" + pizza.crustPrice);
+        System.out.println("Price=" + crust.crustPrice);
     }
 
 

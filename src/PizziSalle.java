@@ -1,5 +1,5 @@
 import GetOrder.*;
-import Pizza.FinishedOrder;
+import Product.FinishedOrder;
 import ProcessOrder.*;
 import SaveOrder.SaveOrder;
 

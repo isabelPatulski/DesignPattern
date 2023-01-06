@@ -1,9 +1,8 @@
 package GetOrder;
-import Ingredient.Ingredient;
-import Pizza.*;
+import Product.Ingredient;
+import Product.*;
 
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 //Limited errorHandling
@@ -44,7 +43,7 @@ public class GetOrder {
             do {
                 System.out.print(("Enter pizza " + (pizzasOrdered + 1) + ": "));
                 pizzaName = input.nextLine().toLowerCase();
-                isOK = StandardPizza.isPizzaNameValid(pizzaName);
+                isOK = Pizza.isPizzaNameValid(pizzaName);
                 if (!isOK) {
                     System.out.println(pizzaName + " is not a pizza with have. Try again");
                 }
@@ -57,14 +56,14 @@ public class GetOrder {
                     System.out.print("What kind of crust? Enter blank if you want Default ");
                     pizzaItem.crust = input.nextLine().toLowerCase();
                     isOK = ((pizzaItem.crust == null) || (pizzaItem.crust.isBlank()))
-                            || (Pizza.isCrustValid(pizzaItem.crust));
+                            || (Crust.isCrustValid(pizzaItem.crust));
                     if (!isOK) {
                         System.out.println(pizzaItem.crust + " is not a crust with have. Select another");
                     }
                 } while (!isOK);
 
                 if ((pizzaItem.crust == null) || (pizzaItem.crust.isBlank())) {
-                    pizzaItem.crust = Pizza.defaultCrust();
+                    pizzaItem.crust = Crust.defaultCrust();
                 }
 
                 pizzaItem.toppings = new ArrayList<String>();

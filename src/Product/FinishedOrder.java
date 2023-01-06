@@ -1,4 +1,4 @@
-package Pizza;
+package Product;
 
 import Customer.*;
 import GetOrder.*;
@@ -37,8 +37,8 @@ public class FinishedOrder {
         //Initialize pizzas
         for (PizzaItem pizzaItem: order.pizzas) {
             CrustPizzaFactory crustPizza = new CrustPizzaFactory();
-            Pizza pizza = crustPizza.getPizza(pizzaItem.crust);
-            
+            Crust crust = crustPizza.getPizza(pizzaItem.crust);
+
 
         }
 
