@@ -1,5 +1,10 @@
 package Product;
 
+//To create the base for the Pizza i have used the Factory Design Pattern. The Factory Design Pattern
+//is a creational Design Pattern. You create an object without using the creation logic to the client
+//and refer to newly created object using the common interface. In this case or interface is product
+//Then i have created a productFactory that generates objects
+
 public abstract class Product {
     protected Double price;
     public String type;

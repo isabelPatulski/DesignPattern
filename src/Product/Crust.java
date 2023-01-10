@@ -1,8 +1,5 @@
 package Product;
 
-//To create the base for the Pizza i have used the Factory Design Pattern.
-//TODO explain DesignPattern
-
 import java.util.ArrayList;
 import java.util.List;
 
