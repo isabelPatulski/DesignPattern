@@ -53,7 +53,9 @@ public class Ingredient {
     }
 
     public static boolean isIngredientValid (String ingredient){
-
+        if (ingredient == null || ingredient.isBlank()){
+            return true;
+        }
         return getValidIngredients().contains(ingredient);
     }
 

@@ -3,7 +3,7 @@ package Product;
 //TODO fill out ingredients
 public class IngredientFactory {
     public Ingredient getIngredient(String ingredientType) {
-        if (ingredientType == null) {
+        if (ingredientType == null || ingredientType.isBlank()) {
             return null;
         }
         switch (ingredientType.toLowerCase()) {

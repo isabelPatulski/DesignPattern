@@ -3,16 +3,21 @@ import Product.Ingredient;
 import Product.*;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 //Limited errorHandling
 
 public class GetOrder {
     public static Order getOrder(){
-        System.out.println("PizziSalle pizzaria! GetOrder.Order your pizza here:");
-        System.out.println("-------------------------------------------");
         Order order = new Order();
         Scanner input = new Scanner(System.in);
+        order.delegation = Pizza.getRandomDelegation();
+
+        System.out.println("WELCOME TO PIZZISALLE IN " + order.delegation.toUpperCase());
+        System.out.println("-------------------------------------------");
+        System.out.println("");
 
         System.out.print("Name: ");
         order.name = input.nextLine();
@@ -29,8 +34,6 @@ public class GetOrder {
         System.out.print("Age: ");
         order.age = Integer.parseInt(input.nextLine());
 
-        order.delegation = "Barcelona";         //TODO replace with random
-
         System.out.println("What kind of pizzas would you like? Enter blank when done ordering Pizzas");
         int pizzasOrdered = 0;
         String pizzaName = "";
@@ -43,7 +46,7 @@ public class GetOrder {
             do {
                 System.out.print(("Enter pizza " + (pizzasOrdered + 1) + ": "));
                 pizzaName = input.nextLine().toLowerCase();
-                isOK = Pizza.isPizzaNameValid(pizzaName);
+                isOK = (Pizza.isPizzaNameValid(pizzaName) && (Pizza.isPizzaDelegationValid(order.delegation, pizzaName)));
                 if (!isOK) {
                     System.out.println(pizzaName + " is not a pizza with have. Try again");
                 }
@@ -85,7 +88,6 @@ public class GetOrder {
 
 
                 order.pizzas.add(pizzaItem);
-                //Er denne en fejl? eller bare til test
                 System.out.println(" "); //Creates an empty line between each pizza
                 pizzasOrdered++;
             }

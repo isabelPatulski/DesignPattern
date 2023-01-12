@@ -18,7 +18,7 @@ public class ProductFactory {
                 return new Ingredient3Pizza(crustName);
             case "burger", "cowboy", "texas", "coast", "bbq", "diablo", "carbonara", "spanish","4 cheeses", "pepperoni":
                 return new Ingredient4Pizza(crustName);
-            case "vegetal":
+            case "vegetal", "barcelona", "girona", "tarragona", "lleida":
                 return new Ingredient5Pizza(crustName);
             case "6 cheeses", "mallorca", "carbonara deluxe":
                 return new Ingredient6Pizza(crustName);

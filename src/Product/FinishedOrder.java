@@ -18,22 +18,7 @@ public class FinishedOrder {
         //Initialize customer from order
         customer = new Customer(order.name, order.phone, order.deliveryAddress, order.age);
 
-        //Initialize random delegation
-        int delegationRandom = ThreadLocalRandom.current().nextInt(0, 4);
-        switch (delegationRandom) {
-            case 0:
-                delegation = "Barcelona";
-                break;
-            case 1:
-                delegation = "Girona";
-                break;
-            case 2:
-                delegation = "Tarragona";
-                break;
-            case 3:
-                delegation = "Lleida";
-                break;
-        }
+        delegation = order.delegation;
 
         //Initialize pizzas
         products = new ArrayList<Product>();

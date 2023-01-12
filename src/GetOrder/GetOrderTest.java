@@ -1,14 +1,12 @@
 package GetOrder;
-
-import Product.Drink;
-import Product.Product;
-import Product.ProductFactory;
-
+import Product.*;
 import java.util.ArrayList;
 
 public class GetOrderTest {
     public static Order getOrder(){
         Order order = new Order();
+        order.delegation = Pizza.getRandomDelegation();
+
         order.name = "Flemming";
         order.phone = "28942300";
         order.deliveryAddress = "Hvedevangen 13";
@@ -36,6 +34,11 @@ public class GetOrderTest {
         pizzaItem3.toppings.add("ham");
         pizzaItem3.toppings.add("beef");
         order.pizzas.add(pizzaItem3);
+
+        PizzaItem pizzaItem4 = new PizzaItem();
+        pizzaItem4.name = "barcelona";
+        pizzaItem4.crust = "thin";
+        order.pizzas.add(pizzaItem4);
 
         return order;
 

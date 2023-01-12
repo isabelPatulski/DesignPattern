@@ -15,7 +15,6 @@ public class Order {
     public String delegation; //consider changing to enum
     public int age;
 
-    //TODO create addOns for each pizza (ingredients)
     public List<PizzaItem> pizzas;
     public List<Drink> drinks;
 

@@ -2,6 +2,7 @@ package Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Pizza extends Product{
 
@@ -15,12 +16,14 @@ public class Pizza extends Product{
     }
 
     public void addIngredients(List<String> ingredientsList){
-        if (ingredientsList==null){
+        if (ingredientsList == null || ingredientsList.isEmpty()){
             return;
         }
         for (String ingredientString: ingredientsList) {
             Ingredient ingredient = new IngredientFactory().getIngredient(ingredientString);
-            this.ingredients.add(ingredient);
+            if (ingredient != null) {
+                this.ingredients.add(ingredient);
+            }
         }
     }
 
@@ -44,16 +47,60 @@ public class Pizza extends Product{
         pizzas.add("6 cheeses");
         pizzas.add("mallorca");
         pizzas.add("carbonara deluxe");
+        pizzas.add("barcelona");
+        pizzas.add("girona");
+        pizzas.add("tarragona");
+        pizzas.add("lleida");
 
         return pizzas;
     }
 
     public static boolean isPizzaNameValid (String name){
+        if (name == null || name.isBlank()){
+            return true;
+        }
         return Pizza.getValidPizzas().contains(name);
-
     }
 
-    @Override
+    public static String getRandomDelegation() {
+        int delegationRandom = ThreadLocalRandom.current().nextInt(0, 4);
+        switch (delegationRandom) {
+            case 0:
+                return  "barcelona";
+            case 1:
+                return  "girona";
+            case 2:
+                return  "tarragona";
+            case 3:
+                return  "lleida";
+        }
+        return "barcelona";
+    }
+
+    public static boolean isPizzaDelegationValid (String delegation, String pizzaName) {
+        //Not pretty but it works
+
+        boolean isOK = true;
+        if ((delegation.equals("barcelona")) &&
+                ((pizzaName.equals("tarragona")) || (pizzaName.equals("lleida")) || (pizzaName.equals("girona")))) {
+            isOK = false;
+        }
+        if ((delegation.equals("tarragona")) &&
+                ((pizzaName.equals("barcelona")) || (pizzaName.equals("lleida")) || (pizzaName.equals("girona")))) {
+            isOK = false;
+        }
+        if ((delegation.equals("lleida")) &&
+                ((pizzaName.equals("barcelona")) || (pizzaName.equals("tarragona")) || (pizzaName.equals("girona")))) {
+            isOK = false;
+        }
+        if ((delegation.equals("girona")) &&
+                ((pizzaName.equals("barcelona")) || (pizzaName.equals("tarragona")) || (pizzaName.equals("lleida")))) {
+            isOK = false;
+        }
+        return isOK;
+    }
+
+        @Override
     public Double getPrice() {
         double totalPrice = this.price + crust.crustPrice;
         for (Ingredient ingredient:this.ingredients) {

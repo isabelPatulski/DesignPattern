@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Drink extends Product{
 
-
+//TODO factory
     static List<String> getValidDrinks(){
         List<String> drinks = new ArrayList<>();
         drinks.add("water");
