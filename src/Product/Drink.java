@@ -20,7 +20,10 @@ public class Drink extends Product{
         return Drink.getValidDrinks().contains(drink);
     }
 
-    public void setPrice(Double price) {
+    public void addIngredients(List<String> ingredientsList) {
+    }
+
+        public void setPrice(Double price) {
         this.price = price;
     }
 

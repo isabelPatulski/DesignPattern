@@ -184,7 +184,7 @@ class Beef extends Ingredient {
 
     @Override
     public double getPrice() {
-        return 0.5;
+        return 1.5;
     }
 }
 

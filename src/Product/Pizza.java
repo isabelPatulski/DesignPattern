@@ -6,10 +6,22 @@ import java.util.List;
 public class Pizza extends Product{
 
     protected Crust crust;
+    protected List<Ingredient> ingredients;
 
     public Pizza(String crustName) {
         crust = new CrustFactory().getCrust(crustName);
         this.type = "Pizza";
+        this.ingredients = new ArrayList<>();
+    }
+
+    public void addIngredients(List<String> ingredientsList){
+        if (ingredientsList==null){
+            return;
+        }
+        for (String ingredientString: ingredientsList) {
+            Ingredient ingredient = new IngredientFactory().getIngredient(ingredientString);
+            this.ingredients.add(ingredient);
+        }
     }
 
     static List<String> getValidPizzas(){
@@ -43,7 +55,11 @@ public class Pizza extends Product{
 
     @Override
     public Double getPrice() {
-        return this.price + this.crust.crustPrice;
+        double totalPrice = this.price + crust.crustPrice;
+        for (Ingredient ingredient:this.ingredients) {
+            totalPrice+=ingredient.getPrice();
+        }
+        return totalPrice;
     }
 
     @Override

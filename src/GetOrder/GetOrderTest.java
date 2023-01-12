@@ -34,6 +34,7 @@ public class GetOrderTest {
         pizzaItem3.toppings.add("tomatoslices");
         pizzaItem3.toppings.add("mushrooms");
         pizzaItem3.toppings.add("ham");
+        pizzaItem3.toppings.add("beef");
         order.pizzas.add(pizzaItem3);
 
         return order;

@@ -43,6 +43,7 @@ public class FinishedOrder {
                 ProductFactory productFactory = new ProductFactory();
                 Product pizza = productFactory.getProduct(pizzaItem.name, pizzaItem.crust);
                 pizza.name = pizzaItem.name;
+                pizza.addIngredients(pizzaItem.toppings);
                 products.add(pizza);
             }
         }

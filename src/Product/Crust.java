@@ -17,6 +17,8 @@ public class Crust extends Product {
         return crusts;
     }
 
+    public void addIngredients(List<String> ingredientsList) { }
+
     public static boolean isCrustValid (String crust){
         return Crust.getValidCrusts().contains(crust);
     }
