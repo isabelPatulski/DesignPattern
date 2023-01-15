@@ -3,7 +3,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-//To create the Database i have chosen to use the Singleton Design pattern.
+//PATTERN: Singleton DesignPattern
+// To create the Database i have chosen to use the Singleton Design pattern.
 //The Singleton Design Pattern is a creational DesignPattern. You make a single class that is
 //responsible for creating an object while making sure no more that one objects is created.
 //We make it so this object can be accessed directly without having to instantiate it in each class.

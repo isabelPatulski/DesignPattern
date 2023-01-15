@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class PizziSalle {
     public static void main(String[] args) throws SQLException {
-        Order order = GetOrderTest.getOrder();
+        Order order = GetOrder.getOrder();
         FinishedOrder finishedOrder = ProcessOrder.processOrder(order);
         SaveOrder.saveOrder(finishedOrder);
         ShowSales.showAllSales();

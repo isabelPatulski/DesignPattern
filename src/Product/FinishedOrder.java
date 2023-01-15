@@ -5,6 +5,7 @@ import GetOrder.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class FinishedOrder {
@@ -20,7 +21,7 @@ public class FinishedOrder {
 
         delegation = order.delegation;
 
-        //Initialize pizzas
+        //Get pizzas from order
         products = new ArrayList<Product>();
 
         if (order.pizzas != null) {
@@ -32,12 +33,15 @@ public class FinishedOrder {
                 products.add(pizza);
             }
         }
+        //Get drinks from order
         if (order.drinks != null) {
-            for (Drink drinkItem : order.drinks) {
+            for (String drinkItem : order.drinks) {
                 ProductFactory productFactory = new ProductFactory();
-                Product drink = productFactory.getProduct(drinkItem.name, null);
-                drink.name = drinkItem.name;
-                products.add(drink);
+                Product drink = productFactory.getProduct(drinkItem.toLowerCase(), null);
+                if (drink != null) {
+                    drink.name = drinkItem.toLowerCase();
+                    products.add(drink);
+                }
             }
         }
 

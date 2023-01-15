@@ -17,7 +17,6 @@ public class Ingredient {
         ingredients.add("bacon");
         ingredients.add("chicken");
         ingredients.add("pinapple");
-        ingredients.add("sobrassada");
         ingredients.add("roquefort");
         ingredients.add("carbonarasauce");
         ingredients.add("cheddar");

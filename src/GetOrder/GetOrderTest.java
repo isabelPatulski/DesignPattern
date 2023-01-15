@@ -40,6 +40,12 @@ public class GetOrderTest {
         pizzaItem4.crust = "thin";
         order.pizzas.add(pizzaItem4);
 
+        order.drinks = new ArrayList<String>();
+        order.drinks.add("soda");
+        order.drinks.add("soda");
+        order.drinks.add("soda");
+        order.drinks.add("beer");
+
         return order;
 
     }

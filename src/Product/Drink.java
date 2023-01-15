@@ -5,7 +5,10 @@ import java.util.List;
 
 public class Drink extends Product{
 
-//TODO factory
+    public Drink() {
+        this.type = "Drink";
+    }
+
     static List<String> getValidDrinks(){
         List<String> drinks = new ArrayList<>();
         drinks.add("water");
@@ -20,6 +23,14 @@ public class Drink extends Product{
         return Drink.getValidDrinks().contains(drink);
     }
 
+    public static boolean isAgeValid (int age, String drink) {
+        if ((drink.equals("beer")) && (age < 18)) {
+            return false;
+        }
+        return true;
+    }
+
+    //Could be iceCubes/lemon etc.
     public void addIngredients(List<String> ingredientsList) {
     }
 

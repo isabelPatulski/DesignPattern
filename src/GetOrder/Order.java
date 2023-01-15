@@ -16,7 +16,7 @@ public class Order {
     public int age;
 
     public List<PizzaItem> pizzas;
-    public List<Drink> drinks;
+    public List<String> drinks;
 
 
 

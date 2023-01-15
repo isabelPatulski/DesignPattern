@@ -1,4 +1,5 @@
 package GetOrder;
+import Customer.Customer;
 import Product.Ingredient;
 import Product.*;
 
@@ -39,10 +40,12 @@ public class GetOrder {
         String pizzaName = "";
         String extraTopping = "";
         order.pizzas = new ArrayList<PizzaItem>();
+        order.drinks = new ArrayList<String>();
+        String extraDrinks = "";
+        boolean isOK = false;
 
 
         do {
-            boolean isOK = false;
             do {
                 System.out.print(("Enter pizza " + (pizzasOrdered + 1) + ": "));
                 pizzaName = input.nextLine().toLowerCase();
@@ -54,6 +57,7 @@ public class GetOrder {
 
             if ((pizzaName != null) && (!pizzaName.isBlank())) {
                 PizzaItem pizzaItem = new PizzaItem();
+                Drink drink = new Drink();
                 pizzaItem.name = pizzaName;
                 do {
                     System.out.print("What kind of crust? Enter blank if you want Default ");
@@ -86,7 +90,6 @@ public class GetOrder {
                     }
                 } while ((toppings < 10) && ((extraTopping != null) && (!extraTopping.isBlank()))) ;
 
-
                 order.pizzas.add(pizzaItem);
                 System.out.println(" "); //Creates an empty line between each pizza
                 pizzasOrdered++;
@@ -94,8 +97,26 @@ public class GetOrder {
 
         } while ((pizzasOrdered<10) && ((pizzaName != null) && (!pizzaName.isBlank())));
 
+        int drinksCounter = 0;
+        do {
+            System.out.print("Add drink " + (drinksCounter + 1) + ", Enter blank when done: ");
+            extraDrinks = input.nextLine().toLowerCase();
+            isOK = ((extraDrinks == null) || (extraDrinks.isBlank()))
+                    || (Drink.isDrinkValid(extraDrinks));
+            if (!isOK) {
+                System.out.println(extraDrinks + " is not an drink with have. Select another or press enter");
+            } else {
+                isOK = ((extraDrinks == null) || (extraDrinks.isBlank()))
+                        || (Drink.isAgeValid(order.age, extraDrinks));
+                if (!isOK) {
+                    System.out.println(" you have to be at least 18 to order a beer. Select another or press enter");
+                }
+                else {
+                    order.drinks.add(extraDrinks);
+                    drinksCounter++;
+                }
+            }
+        } while ((drinksCounter < 10) && ((extraDrinks != null) && (!extraDrinks.isBlank()))) ;
         return order;
     }
 }
-
-//TODO order for beverages + isvalid in Drink class hvor du giver alder som int istedet for navn
