@@ -15,7 +15,7 @@ public class PizziSalle {
         boolean useInput = false;
 
         Order order;
-        if (useInput) {
+        if (useInput) {  //could have used classFactory
             order = GetOrder.getOrder();
         }
         else {
