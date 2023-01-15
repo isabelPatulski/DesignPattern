@@ -10,9 +10,21 @@ import java.sql.SQLException;
 
 public class PizziSalle {
     public static void main(String[] args) throws SQLException {
-        Order order = GetOrder.getOrder();
-        FinishedOrder finishedOrder = ProcessOrder.processOrder(order);
-        SaveOrder.saveOrder(finishedOrder);
+
+        boolean useSQL = false;
+        boolean useInput = false;
+
+        Order order;
+        if (useInput) {
+            order = GetOrder.getOrder();
+        }
+        else {
+            order = GetOrderTest.getOrder();
+        }
+            FinishedOrder finishedOrder = ProcessOrder.processOrder(order);
+        if (useSQL) {
+            SaveOrder.saveOrder(finishedOrder);
+        }
         ShowSales.showAllSales();
 
         System.out.println("");
