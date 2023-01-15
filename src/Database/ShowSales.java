@@ -6,7 +6,6 @@ public class ShowSales {
     public static void showAllSales () throws SQLException {
         DatabaseConnector databaseConnector = DatabaseConnector.getInstance();
         Connection connection = databaseConnector.getConnection();
-        PreparedStatement statement;
         Statement countStatement = connection.createStatement();
         String orderString = "SELECT OrderTable.idOrder, date, customerName, SUM(price)"+
         " FROM OrderTable" +

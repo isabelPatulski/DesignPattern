@@ -1,5 +1,5 @@
 package Product;
-
+//Factory pattern used
 public class IngredientFactory {
     public Ingredient getIngredient(String ingredientType) {
         if (ingredientType == null || ingredientType.isBlank()) {

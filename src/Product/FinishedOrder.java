@@ -2,12 +2,10 @@ package Product;
 
 import Customer.*;
 import GetOrder.*;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.ThreadLocalRandom;
 
+//FactoryDesign pattern used
 public class FinishedOrder {
 
     public List<Product> products;
