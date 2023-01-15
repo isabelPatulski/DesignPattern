@@ -12,20 +12,23 @@ public class PizziSalle {
     public static void main(String[] args) throws SQLException {
 
         boolean useSQL = false;
-        boolean useInput = false;
+        boolean isTest = true;
 
         Order order;
-        if (useInput) {  //could have used classFactory
-            order = GetOrder.getOrder();
+        if (!isTest) {
+            //Using the facadePattern to select input implementation (via scanner)
+            order = GetOrderFacade.getOrder("input");
         }
         else {
-            order = GetOrderTest.getOrder();
+            //Using the facadePattern to select implementation that creates a testOrder
+            order = GetOrderFacade.getOrder("test");
         }
-            FinishedOrder finishedOrder = ProcessOrder.processOrder(order);
-        if (useSQL) {
+        FinishedOrder finishedOrder = ProcessOrder.processOrder(order);
+
+        if (useSQL) {  //Could also use facadePattern for different output options.
             SaveOrder.saveOrder(finishedOrder);
+            ShowSales.showAllSales();
         }
-        ShowSales.showAllSales();
 
         System.out.println("");
         System.out.println("Here is your order: " + order.name);

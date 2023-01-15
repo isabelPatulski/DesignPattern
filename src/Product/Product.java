@@ -1,10 +1,10 @@
 package Product;
 
-//PATTERN: Factory Design Pattern
-// To create the base for the Pizza i have used the Factory Design Pattern. The Factory Design Pattern
-//is a creational Design Pattern. You create an object without using the creation logic to the client
-//and refer to newly created object using the common interface. In this case our interface is "product"
-//Then i have created a productFactory that generates objects we need.
+//PATTERN: Template Pattern
+//The templatePattern creates a "skeleton" with functions for the subClasses to use.
+//Here our "skeleton is the Product.Java class. It creates the "skeleton" we then use for the
+//Drink.java class and for the Pizza.java class. In those classes we have then implemented the
+//different functions from the Product.java class.
 
 import java.util.List;
 

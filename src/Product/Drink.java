@@ -3,6 +3,7 @@ package Product;
 import java.util.ArrayList;
 import java.util.List;
 
+//TemplatePattern used
 public class Drink extends Product{
 
     public Drink() {

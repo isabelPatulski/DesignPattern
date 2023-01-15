@@ -2,6 +2,7 @@ package GetOrder;
 import Product.*;
 import java.util.ArrayList;
 
+//Used by the FacadePattern
 public class GetOrderTest {
     public static Order getOrder(){
         Order order = new Order();

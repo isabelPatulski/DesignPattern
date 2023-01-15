@@ -1,8 +1,11 @@
 package Product;
 
 public class ProductFactory {
-    String name;
-    Crust crust;
+    //PATTERN: Factory Design Pattern
+// To create the base for the Pizza i have used the Factory Design Pattern. The Factory Design Pattern
+//is a creational Design Pattern. You create an object without using the creation logic to the client
+//and refer to newly created object using the common interface. In this case our interface is "product"
+//Then i have created a productFactory that generates objects we need.
 
     public Product getProduct(String productName, String crustName) {
         if (productName == null) {
